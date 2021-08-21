@@ -16,7 +16,7 @@ git clone https://github.com/indonesian-nlp/ai-research.id.git
 cd ai-research.id
 ```
 
-### Without Docker
+### Development
 First, make sure to [install `hugo`](https://gohugo.io/getting-started/installing/).
 
 After that, run:
@@ -27,13 +27,17 @@ hugo server
 
 The website will be run in `localhost:1313`.
 
-### Docker
-Run:
+### Deployment
+
+Build image:
 ```
-docker-compose up
+docker build -t airesearch .
 ```
 
-The website will be run in `localhost:1313`.
+Run:
+```
+docker run -d -p 8080:80 airesearch
+```
 
 ## Acknowledge
 This website template is based on [Blogophonic](https://github.com/formspree/blogophonic-hugo/).
